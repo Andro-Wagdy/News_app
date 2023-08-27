@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:news_app/Data/Repository/get_news.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   // This widget is the root of your application.
+  String messageTitle = "Empty";
+  String notificationAlert = "alert";
+
   @override
   Widget build(BuildContext context) {
     List buttons = ["Technology", "Finance", "Arts", "Sports"];
@@ -92,6 +102,8 @@ class HomeScreen extends StatelessWidget {
                               fontWeight: FontWeight.w600),
                         ),
                       ),
+                      ElevatedButton(
+                          onPressed: () async {}, child: Text("Get news")),
                       Padding(
                         padding: const EdgeInsets.only(right: 16),
                         child: SvgPicture.asset(
